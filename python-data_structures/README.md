@@ -1,0 +1,1 @@
+yaxsi da bidlik
