@@ -6,6 +6,3 @@ def no_c(my_string):
         if (i.lower()) != "c":
             final += i
     return final
-
-
-print(no_c("gaccagag"))
