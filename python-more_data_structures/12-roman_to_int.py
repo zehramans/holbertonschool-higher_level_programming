@@ -2,7 +2,7 @@
 
 def roman_to_int(roman_string):
     if type(roman_string) is not str:
-        return None
+        return 0
     else:
         roman_map = {
             'I': 1, 'V': 5, 'X': 10, 'L': 50,
