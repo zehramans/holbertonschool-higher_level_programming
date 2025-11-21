@@ -8,6 +8,6 @@ def safe_print_list_integers(my_list=[], x=0):
                 print("{:d}".format(my_list[i]), end="")
                 count += 1
         except IndexError:
-            raise IndexError("list index out of range")
+            raise IndexError("IndexError: list index out of range")
     print()         
     return count
