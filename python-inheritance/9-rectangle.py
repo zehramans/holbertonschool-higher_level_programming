@@ -22,4 +22,4 @@ class Rectangle(BaseGeometry):
         name = str(self.__class__.__name__)
         a = str(self.__width)
         b = str(self.__height)
-        return f"[{name}] {w}/{h}"
+        return f"[{name}] {a}/{b}"
