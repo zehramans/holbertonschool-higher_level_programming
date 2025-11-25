@@ -1,4 +1,3 @@
-GNU nano 8.6                                       8 - rectangle.py
 #!/usr/bin/python3
 """rectangle to inherit from basegeometry"""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
