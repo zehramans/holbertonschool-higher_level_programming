@@ -9,6 +9,13 @@ class MyList(list):
         super().__init__(self)
 
     def print_sorted(self):
+        """
+        >>> new_list = self + []
+        copy of the self
+        >>> new_list.sort
+        [1, 2, 3, 4, 5]
+        """
+
         new_list = self + []
         new_list.sort()
         print(new_list)
