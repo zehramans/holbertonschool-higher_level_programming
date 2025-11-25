@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+"""Alright"""
+
+
+class MyList(list):
+    """ OKay"""
+
+    def __init__(self):
+        super().__init__(self)
+
+    def print_sorted(self):
+        new_list = self + []
+        new_list.sort()
+        print(new_list)
