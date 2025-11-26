@@ -1,12 +1,17 @@
 #!/usr/bin/python3
+"""salam"""
+
+
 def factorial(n):
     f = 1
     for i in range(1, n + 1):
         f *= i
     return f
+    """slaam"""
 
 
 def pascal_triangle(n):
+    """salam"""
     if n <= 0:
         return []
     lists = []
