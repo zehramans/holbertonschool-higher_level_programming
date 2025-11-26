@@ -3,7 +3,8 @@
 
 
 def save_to_json_file(my_obj, filename):
-    """indi serialize elemek ucun dumps() istifade edecik bir de with open bayaqki"""
+    """indi serialize elemek ucun dumps() 
+    istifade edecik bir de with open bayaqki"""
     import json
     with open(filename, "w", encoding="utf-8")as f:
         json.dump(my_obj, f)
