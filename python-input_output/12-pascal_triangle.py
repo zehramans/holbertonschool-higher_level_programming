@@ -17,4 +17,3 @@ def pascal_triangle(n):
         esaslist.append(lists)
         print(lists)
         lists = []
-pascal_triangle(5)
