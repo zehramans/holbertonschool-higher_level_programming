@@ -15,9 +15,9 @@ def pascal_triangle(n):
         for j in range(i + 1):
             lists.append(factorial(i) // (factorial(j) * factorial(i - j)))
         esaslist.append(lists)
+        print(lists)
         lists = []
-    for i in esaslist:
-        print(i)
+    return esaslist
 
 
 print(pascal_triangle(5))
