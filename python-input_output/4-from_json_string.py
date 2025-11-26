@@ -7,4 +7,4 @@ def from_json_string(my_str):
     loads() = json stringini deserialize eliyir python objectine
     """
     import json
-    json.loads(my_str)
+    return json.loads(my_str)
