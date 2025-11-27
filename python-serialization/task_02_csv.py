@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """qeseng kod"""
-import csv 
+import csv
 import json
+
+
 def convert_csv_to_json(csvfilename):
     """0 komek tekce ozum yazdim"""
     try:
@@ -11,4 +13,3 @@ def convert_csv_to_json(csvfilename):
             json.dump(reader, f)
     except FileNotFoundError:
         return False
-
