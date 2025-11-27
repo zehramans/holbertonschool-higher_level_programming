@@ -12,4 +12,4 @@ def serialize_and_save_to_file(data, filename):
 def load_and_deserialize(filename):
     """deserialize"""
     with open(filename, "r", encoding="utf-8") as f:
-        return json.loads(f)
+        return json.load(f)
