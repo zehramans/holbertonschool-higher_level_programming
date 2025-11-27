@@ -14,13 +14,12 @@ class CustomObject:
             with open(filename, "wb") as f:
                 pickle.dump(self, f)
         except (OSError, pickle.PickleError) as e:
-            print(f"Error during serialization: {e}")
             return None
 
     @classmethod
     def deserialize(cls, filename):
         with open(filename, "rb") as f:
-            pickle.load(f)
+            return pickle.load(f)
 
     def display(self):
         print("Name: {}".format(self.name))
