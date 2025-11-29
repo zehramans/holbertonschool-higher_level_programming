@@ -1,2 +1,2 @@
---display display
+--display displa;
 SHOW DATABASES;
