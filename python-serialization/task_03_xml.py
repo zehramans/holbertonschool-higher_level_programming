@@ -20,6 +20,6 @@ def deserialize_from_xml(filename):
 
     result = {}
     for i in root:
-        result[i.tag] = child.text
+        result[i.tag] = i.text
 
     return result
