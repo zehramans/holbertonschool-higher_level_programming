@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """urllib only"""
-import urllib
+import urllib.request
 
 url = "https://intranet.hbtn.io/status"
 
