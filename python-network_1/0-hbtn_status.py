@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+"""urllib only"""
 import urllib
 
 url = "https://intranet.hbtn.io/status"
 
 with urllib.request.urlopen(url) as res:
     body = res.read()
-
+"""safely open and close the request"""
 print("Body response:")
 print("\t- type: {}".format(type(body)))
 print("\t- content: {}".format(body))
