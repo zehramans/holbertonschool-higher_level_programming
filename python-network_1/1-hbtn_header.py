@@ -10,6 +10,7 @@ else:
     url = sys.argv[1]
 
     with urllib.request.urlopen(url) as res:
-        print((res.headers()).get('X-Request-Id'))
+        print(res.getheader('X-Request-Id'))
     """duz olsa sevinerem salladim biraz"""
     """bu defe duzdu come on"""
+    """bruh getheader deye sey var imis"""
