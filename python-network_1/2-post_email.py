@@ -16,4 +16,4 @@ else:
     data = data.encode('utf-8')
 
     with urllib.request.urlopen(url, data=data) as res:
-        print(res.read.decode('utf-8'))
+        print(res.read().decode('utf-8'))
