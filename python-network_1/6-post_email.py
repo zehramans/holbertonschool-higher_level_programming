@@ -10,4 +10,4 @@ else:
     email = sys.argv[2]
     payload = {"email": email}
     r = requests.post(url, data=payload)
-    print(f"Your email is: {email}")
+    print(r.text.strip())
