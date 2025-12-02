@@ -5,6 +5,7 @@ import sys
 
 if len(sys.argv) < 2:
     q = ''
+    print("No result")
 else:
     q = sys.argv[1]
     try:
