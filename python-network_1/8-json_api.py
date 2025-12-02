@@ -8,7 +8,7 @@ if len(sys.argv) < 2:
 else:
     q = sys.argv[1]
     try:
-        response = request.post(
+        response = requests.post(
             "http://0.0.0.0:5000/search_user",
             data={
                 'q': q})
