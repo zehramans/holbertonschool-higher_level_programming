@@ -11,11 +11,11 @@ from flask_jwt_extended import (
 app = Flask(__name__)
 auth = HTTPBasicAuth()
 
-app.config["JWT_SECRET_KEY"] = "giizli"
+# Secret key for JWT
+app.config["JWT_SECRET_KEY"] = "super-secret-key-123"
 jwt = JWTManager(app)
 
 users = {
-<<<<<<< HEAD
     "user1": {
         "username": "user1",
         "password": generate_password_hash("password"),
@@ -24,42 +24,25 @@ users = {
     "admin1": {
         "username": "admin1",
         "password": generate_password_hash("password"),
-        "role": "admin"}
+        "role": "admin"
+    }
 }
 
 
-=======
-        "user1": {
-            "username": "user1",
-            "password": generate_password_hash("password"),
-            "role": "user"
-            },
-        "admin1": {
-            "username": "admin1",
-            "password": generate_password_hash("password"),
-            "role":"admin"}
-        }
->>>>>>> 5521354bcf476de22496cf8da0989e40a5d02525
-@app.verify_password
+@auth.verify_password
 def verify_password(username, password):
     user = users.get(username)
     if not user:
         return False
     return check_password_hash(user["password"], password)
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 5521354bcf476de22496cf8da0989e40a5d02525
 @app.route("/basic-protected")
 @auth.login_required
 def basic_protected():
     return jsonify({"message": "Basic Auth: Access Granted"}), 200
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 5521354bcf476de22496cf8da0989e40a5d02525
 @app.route("/login", methods=["POST"])
 def login():
     if not request.is_json:
@@ -73,29 +56,29 @@ def login():
     if not user or not check_password_hash(user["password"], password):
         return jsonify({"error": "Invalid credentials"}), 401
 
-    token = {
-<<<<<<< HEAD
+    token_data = {
         "username": username,
-        "role": user["role"]}
+        "role": user["role"],
+    }
 
-    tokena = create_access_token(identity=token)
+    access_token = create_access_token(identity=token_data)
 
-    return jsonify({"access_token": tokena}), 200
+    return jsonify({"access_token": access_token}), 200
 
 
 @app.route("/jwt-protected")
 @jwt_required()
 def jwt_protected():
-    return jsonify({"message": "JWT Auth: Accesss Granted"}), 200
+    return jsonify({"message": "JWT Auth: Access Granted"}), 200
 
 
 @app.route("/admin-only")
 @jwt_required()
 def admin_only():
-    user_now = get_jwt_identity()
-
-    if user_now["role"] != "admin":
+    current_user = get_jwt_identity()
+    if current_user["role"] != "admin":
         return jsonify({"error": "Admin access required"}), 403
+
     return jsonify({"message": "Admin Access: Granted"}), 200
 
 
@@ -125,9 +108,4 @@ def handle_needs_fresh(err):
 
 
 if __name__ == "__main__":
-    app.run()
-=======
-            "username": username,
-            "role": user["role"]}
-
->>>>>>> 5521354bcf476de22496cf8da0989e40a5d02525
+    app.run(debug=True)
