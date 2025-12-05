@@ -21,20 +21,22 @@ def generate_invitations(template, attendees):
         placeholders = ["name", "event_title", "event_date", "event_location"]
 
         for pl in placeholders:
-            value = attendee.get(pl)
+            value = attendee.get(pl, "N/A")
             if value == None:
                 value = "N/A"
             invite = invite.replace(
                 "{" + pl + "}",
                 str(value)
             )
-            filename = f"output_{index}.txt"
-            if os.path.exists(filename):
+        filename = f"output_{index}.txt"
+        if os.path.exists(filename):
                 continue
 
-            try:
-                with open(filename, "w", encoding="utf-8") as f:
-                    f.write(invite)
-            except Exception as e:
-                print(e)
-            return
+        try:
+            with open(filename, "w", encoding="utf-8") as f:
+                f.write(invite)
+        except Exception as e:
+            print(e)
+    return
+
+
