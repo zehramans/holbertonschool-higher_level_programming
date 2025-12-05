@@ -28,7 +28,7 @@ def generate_invitations(template, attendees):
                 "{" + pl + "}",
                 str(value)
             )
-            filename = f("output_{index}.txt")
+            filename = f"output_{index}.txt"
             if os.path.exists(filename):
                 continue
 
