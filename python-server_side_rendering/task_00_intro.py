@@ -22,7 +22,7 @@ def generate_invitations(template, attendees):
 
         for pl in placeholders:
             value = attendee.get(pl, "N/A")
-            if value = None:
+            if value == None:
                 value = "N/A"
             invitation_text = invitation_text.replace(
                 "{" + pl + "}",
