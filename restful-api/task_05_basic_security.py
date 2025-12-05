@@ -15,6 +15,7 @@ app.config["JWT_SECRET_KEY"] = "giizli"
 jwt = JWTManager(app)
 
 users = {
+<<<<<<< HEAD
     "user1": {
         "username": "user1",
         "password": generate_password_hash("password"),
@@ -27,6 +28,18 @@ users = {
 }
 
 
+=======
+        "user1": {
+            "username": "user1",
+            "password": generate_password_hash("password"),
+            "role": "user"
+            },
+        "admin1": {
+            "username": "admin1",
+            "password": generate_password_hash("password"),
+            "role":"admin"}
+        }
+>>>>>>> 5521354bcf476de22496cf8da0989e40a5d02525
 @app.verify_password
 def verify_password(username, password):
     user = users.get(username)
@@ -34,13 +47,19 @@ def verify_password(username, password):
         return False
     return check_password_hash(user["password"], password)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5521354bcf476de22496cf8da0989e40a5d02525
 @app.route("/basic-protected")
 @auth.login_required
 def basic_protected():
     return jsonify({"message": "Basic Auth: Access Granted"}), 200
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5521354bcf476de22496cf8da0989e40a5d02525
 @app.route("/login", methods=["POST"])
 def login():
     if not request.is_json:
@@ -55,6 +74,7 @@ def login():
         return jsonify({"error": "Invalid credentials"}), 401
 
     token = {
+<<<<<<< HEAD
         "username": username,
         "role": user["role"]}
 
@@ -106,3 +126,8 @@ def handle_needs_fresh(err):
 
 if __name__ == "__main__":
     app.run()
+=======
+            "username": username,
+            "role": user["role"]}
+
+>>>>>>> 5521354bcf476de22496cf8da0989e40a5d02525
