@@ -21,7 +21,7 @@ def generate_invitations(template, attendees):
         placeholders = ["name", "event_title", "event_date", "event_location"]
 
         for pl in placeholders:
-            value = attendee.get(pl, "N/A")
+            value = attendee.get(pl)
             if value == None:
                 value = "N/A"
             invite = invite.replace(
