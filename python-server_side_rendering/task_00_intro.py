@@ -24,7 +24,7 @@ def generate_invitations(template, attendees):
             value = attendee.get(pl, "N/A")
             if value == None:
                 value = "N/A"
-            invitation_text = invitation_text.replace(
+            invite = invite.replace(
                 "{" + pl + "}",
                 str(value)
             )
