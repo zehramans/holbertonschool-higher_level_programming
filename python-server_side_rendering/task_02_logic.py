@@ -20,10 +20,14 @@ def contact():
 def items():
     json_path = os.path.join(app.root_path, 'items.json')
     
-    with open(json_path, 'r') as file:
-        data = json.load(file)
+    try:
+        with open(json_path, 'r') as file:
+            data = json.load(file)
+        
+        items_list = data.get('items', []) if isinstance(data, dict) else []
+    except (FileNotFoundError, json.JSONDecodeError, Exception):
+        items_list = []
     
-    return render_template('items.html', items=data['items'])
-
+    return render_template('items.html', items=items_list)
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
